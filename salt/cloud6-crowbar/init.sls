@@ -7,7 +7,7 @@ nfs-client:
         - name: nfs
         - enable: True
         - require:
-            - pkg: 
+            - pkgs: 
                 - nfs-client
                 - kernel-default
 
