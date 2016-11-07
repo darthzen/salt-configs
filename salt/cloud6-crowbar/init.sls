@@ -1,5 +1,10 @@
 nfs-client:
-    pkg.installed
+    pkg.installed: []
+    service.running:
+        - name: nfs
+        - enable: True
+        - require:
+            - pkg: nfs-client
 
 /srv/www/htdocs/repo:
     mount.mounted:
