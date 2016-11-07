@@ -2,14 +2,14 @@ kernel-default:
     pkg.installed: []
 
 nfs-client:
-    pkg.installed: []
+    pkg.installed:
+        - require:
+            - pkg: kernel-default
     service.running:
         - name: nfs
         - enable: True
         - require:
-            - pkgs: 
-                - nfs-client
-                - kernel-default
+            - pkg: nfs-client
 
 nfs-idmapd:
     service.running:
