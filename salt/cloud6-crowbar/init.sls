@@ -11,12 +11,6 @@ nfs-client:
         - require:
             - pkg: nfs-client
 
-nfs-idmapd:
-    service.running:
-        - enable: True
-        - require:
-            - pkg: nfs-client
-
 /srv/www/htdocs/repo:
     mount.mounted:
         - require:
