@@ -27,7 +27,7 @@ nfs-client:
 /srv/tftpboot/suse-12.1/x86_64/install:
     mount.mounted:
         - require:
-            -pkg.nfs-client
+            -pkg: nfs-client
         - device: 192.168.124.1:/exports/install/suse/SLES12-SP1-x86_64
         - fstype: nfs
         - mkmnt: True
@@ -37,7 +37,7 @@ nfs-client:
 /srv/tftpboot/suse-12.1/x86_64/repos/Cloud:
     mount.mounted:
         - require:
-            -pkg.nfs-client
+            -pkg: nfs-client
         - device: 192.168.124.1:/exports/install/suse/SUSE-Cloud-6
         - fstype: nfs
         - mkmnt: True
