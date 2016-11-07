@@ -6,3 +6,4 @@
         - opts:
             - nfsvers=3
             - ro
+
