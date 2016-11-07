@@ -1,3 +1,6 @@
+nfs-client:
+    pkg.installed:
+
 /srv/www/htdocs/repo:
     mount.mounted:
         - device: 192.168.124.1:/exports/smt
