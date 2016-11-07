@@ -1,9 +1,10 @@
 /srv/www/htdocs/repo:
-    - mount.mounted:
+    mount.mounted:
         - device: 192.168.124.1:/exports/smt
         - fstype: nfs
         - mkmnt: True
+        - persist: True 
         - opts:
-            - nfsvers=3
+            - vers=3
             - ro
 
