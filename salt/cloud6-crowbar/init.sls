@@ -62,6 +62,13 @@ nfs-client:
         - file_mode: 600
         - makedirs: True
 
+ntp:
+    pkg.installed: []
+    service.running:
+        - name: ntpd
+        - require:
+            - pkg: ntp
+
 patterns-cloud-admin:
     pkg.installed: []
     service.running:
