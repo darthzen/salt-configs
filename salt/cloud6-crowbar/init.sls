@@ -1,3 +1,12 @@
+/root/.ssh/authorized_keys:
+    file.managed:
+        - source: salt://keys/pikachu.pub
+        - user: root
+        - group: root
+        - file_mode: 744
+        - dir_mode:700
+        - makedirs: True
+
 kernel-default:
     pkg.installed: []
 
@@ -62,10 +71,23 @@ nfs-client:
         - file_mode: 600
         - makedirs: True
 
+sshd:
+    service.running:
+        - enable: True
+        - reload: True
+
+/etc/sysconfig/ntp:
+    file.managed:
+        - source: salt://cloud6-crowbar/ntp
+        - user: root
+        - group: root
+        - makedirs: True
+
 ntp:
     pkg.installed: []
     service.running:
         - name: ntpd
+        - reload: True
         - require:
             - pkg: ntp
 
