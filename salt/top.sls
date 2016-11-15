@@ -1,4 +1,6 @@
 base:
+    '*':
+        - base.vimrc
     'pine':
         - wordpress
     'cloud6-crowbar':
