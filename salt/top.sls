@@ -1,4 +1,6 @@
 base:
+    'pine':
+        - wordpress
     'cloud6-crowbar':
         - repos.sles12-sp1-x86_64
         - repos.cloud6
