@@ -10,59 +10,58 @@
 kernel-default:
     pkg.installed: []
 
-#nfs-client:
-#    pkg.installed:
-#        - require:
-#            - pkg: kernel-default
-#    service.running:
-#        - name: nfs
-#        - enable: True
-#        - require:
-#            - pkg: nfs-client
-#
-#
-#/srv/www/htdocs/repo:
-#    mount.mounted:
-#        - require:
-#            - pkg: nfs-client
-#        - device: 192.168.124.1:/exports/smt
-#        - fstype: nfs
-#        - mkmnt: True
-#        - persist: True 
-#        - opts:
-#            - vers=3
-#            - ro
-#
-#/srv/tftpboot/suse-12.1/x86_64/install:
-#    mount.mounted:
-#        - require:
-#            - pkg: nfs-client
-#        - device: 192.168.124.1:/exports/install/suse/SLES12-SP1-x86_64
-#        - fstype: nfs
-#        - mkmnt: True
-#        - persist: True
-#        - opts: vers=3
-#
-#/srv/tftpboot/suse-12.2/x86_64/install:
-#    mount.mounted:
-#        - require:
-#            - pkg: nfs-client
-#        - device: 192.168.124.1:/exports/install/suse/SLES12-SP2-x86_64
-#        - fstype: nfs
-#        - mkmnt: True
-#        - persist: True
-#        - opts: vers=3
-#
-#/srv/tftpboot/suse-12.2/x86_64/repos/Cloud:
-#    mount.mounted:
-#        - require:
-#            - pkg: nfs-client
-#        - device: 192.168.124.1:/exports/install/suse/SUSE-Cloud-7
-#        - fstype: nfs
-#        - mkmnt: True
-#        - persist: True
-#        - opts: vers=3
-#
+nfs-client:
+    pkg.installed:
+        - require:
+            - pkg: kernel-default
+    service.running:
+        - name: nfs
+        - enable: True
+        - require:
+            - pkg: nfs-client
+
+/srv/www/htdocs/repo:
+    mount.mounted:
+        - require:
+            - pkg: nfs-client
+        - device: 192.168.124.1:/exports/smt
+        - fstype: nfs
+        - mkmnt: True
+        - persist: True 
+        - opts:
+            - vers=3
+            - ro
+
+/srv/tftpboot/suse-12.1/x86_64/install:
+    mount.mounted:
+        - require:
+            - pkg: nfs-client
+        - device: 192.168.124.1:/exports/install/suse/SLES12-SP1-x86_64
+        - fstype: nfs
+        - mkmnt: True
+        - persist: True
+        - opts: vers=3
+
+/srv/tftpboot/suse-12.2/x86_64/install:
+    mount.mounted:
+        - require:
+            - pkg: nfs-client
+        - device: 192.168.124.1:/exports/install/suse/SLES12-SP2-x86_64
+        - fstype: nfs
+        - mkmnt: True
+        - persist: True
+        - opts: vers=3
+
+/srv/tftpboot/suse-12.2/x86_64/repos/Cloud:
+    mount.mounted:
+        - require:
+            - pkg: nfs-client
+        - device: 192.168.124.1:/exports/install/suse/SUSE-Cloud-7
+        - fstype: nfs
+        - mkmnt: True
+        - persist: True
+        - opts: vers=3
+
 #/etc/crowbar/network.json:
 #    file.managed:
 #        - source: salt://cloud7-crowbar/network.json
