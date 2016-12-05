@@ -7,8 +7,8 @@
         - dir_mode:700
         - makedirs: True
 
-kernel-default:
-    pkg.installed: []
+#kernel-default:
+#    pkg.installed: []
 
 #nfs-client:
 #    pkg.installed:
