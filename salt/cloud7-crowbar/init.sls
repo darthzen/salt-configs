@@ -81,11 +81,11 @@
 #        - file_mode: 600
 #        - makedirs: True
 #
-#sshd:
-#    service.running:
-#        - enable: True
-#        - reload: True
-#
+sshd:
+    service.running:
+        - enable: True
+        - reload: True
+
 #/etc/sysconfig/ntp:
 #    file.managed:
 #        - source: salt://cloud7-crowbar/ntp
