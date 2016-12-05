@@ -1,11 +1,11 @@
-/root/.ssh/authorized_keys:
-    file.managed:
-        - source: salt://keys/pikachu.pub
-        - user: root
-        - group: root
-        - file_mode: 744
-        - dir_mode:700
-        - makedirs: True
+#/root/.ssh/authorized_keys:
+#    file.managed:
+#        - source: salt://keys/pikachu.pub
+#        - user: root
+#        - group: root
+#        - file_mode: 744
+#        - dir_mode:700
+#        - makedirs: True
 
 kernel-default:
     pkg.installed: []
@@ -100,9 +100,9 @@ ntp:
         - require:
             - pkg: ntp
 
-##patterns-cloud-admin:
-##    pkg.installed: []
-##    service.running:
-##        - name: crowbar-init
-##        - require:
-##            - pkg: patterns-cloud-admin
+patterns-cloud-admin:
+    pkg.installed: []
+    service.running:
+        - name: crowbar-init
+        - require:
+            - pkg: patterns-cloud-admin
