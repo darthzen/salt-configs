@@ -101,9 +101,9 @@ ntp:
         - require:
             - pkg: ntp
 
-patterns-cloud-admin:
-    pkg.installed: []
-    service.running:
-        - name: crowbar-init
-        - require:
-            - pkg: patterns-cloud-admin
+#patterns-cloud-admin:
+#    pkg.installed: []
+#    service.running:
+#        - name: crowbar-init
+#        - require:
+#            - pkg: patterns-cloud-admin
