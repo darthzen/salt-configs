@@ -62,14 +62,14 @@ nfs-client:
         - persist: True
         - opts: vers=3
 
-#/etc/crowbar/network.json:
-#    file.managed:
-#        - source: salt://cloud7-crowbar/network.json
-#        - user: root
-#        - group: root
-#        - mode: 644
-#        - makedirs: True
-#
+/etc/crowbar/network.json:
+    file.managed:
+        - source: salt://cloud7-crowbar/network.json
+        - user: root
+        - group: root
+        - mode: 644
+        - makedirs: True
+
 /etc/ssh:
     file.recurse:
         - source: salt://cloud7-crowbar/ssh
