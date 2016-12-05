@@ -70,36 +70,36 @@ nfs-client:
 #        - mode: 644
 #        - makedirs: True
 #
-#/etc/ssh:
-#    file.recurse:
-#        - source: salt://cloud7-crowbar/ssh
-#        - include_empty: True
-#        - user: root
-#        - group: root
-#        - dir_mode: 644
-#        - file_mode: 600
-#        - makedirs: True
-#
-#sshd:
-#    service.running:
-#        - enable: True
-#        - reload: True
-#
-#/etc/sysconfig/ntp:
-#    file.managed:
-#        - source: salt://cloud7-crowbar/ntp
-#        - user: root
-#        - group: root
-#        - makedirs: True
-#
-#ntp:
-#    pkg.installed: []
-#    service.running:
-#        - name: ntpd
-#        - reload: True
-#        - require:
-#            - pkg: ntp
-#
+/etc/ssh:
+    file.recurse:
+        - source: salt://cloud7-crowbar/ssh
+        - include_empty: True
+        - user: root
+        - group: root
+        - dir_mode: 644
+        - file_mode: 600
+        - makedirs: True
+
+sshd:
+    service.running:
+        - enable: True
+        - reload: True
+
+/etc/sysconfig/ntp:
+    file.managed:
+        - source: salt://cloud7-crowbar/ntp
+        - user: root
+        - group: root
+        - makedirs: True
+
+ntp:
+    pkg.installed: []
+    service.running:
+        - name: ntpd
+        - reload: True
+        - require:
+            - pkg: ntp
+
 ##patterns-cloud-admin:
 ##    pkg.installed: []
 ##    service.running:
