@@ -13,4 +13,4 @@ base:
     'cloud7-crowbar':
         - repos.sles12-sp2-x86_64
         - repos.cloud7
-#        - cloud7-crowbar
+        - cloud7-crowbar
