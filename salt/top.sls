@@ -1,6 +1,6 @@
 base:
-    '*':
-        - base.vim
+#    '*':
+#        - base.vim
 
     'pine':
         - wordpress
