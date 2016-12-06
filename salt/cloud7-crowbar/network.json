@@ -39,7 +39,7 @@
                         }, 
                         "intf2": {
                             "if_list": [
-                                "?1g3"
+                                "?1g2"
                             ]
                         }
                     }, 
@@ -153,7 +153,7 @@
                     "pattern": "product"
                 }
             ], 
-            "mode": "single", 
+            "mode": "dual", 
             "networks": {
                 "admin": {
                     "add_bridge": false, 
@@ -178,7 +178,7 @@
                             "start": "192.168.124.241"
                         }
                     }, 
-                    "router": "192.168.124.2", 
+                    "router": "192.168.124.1", 
                     "router_pref": 10, 
                     "subnet": "192.168.124.0", 
                     "use_vlan": false, 
@@ -280,7 +280,7 @@
                             "start": "192.168.126.3"
                         }
                     }, 
-                    "router": "192.168.126.2", 
+                    "router": "192.168.126.1", 
                     "router_pref": 5, 
                     "subnet": "192.168.126.0", 
                     "use_vlan": false, 
