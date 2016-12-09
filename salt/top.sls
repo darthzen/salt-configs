@@ -14,3 +14,6 @@ base:
         - repos.sles12-sp2-x86_64
         - repos.cloud7
         - cloud7-crowbar
+
+    'pikachu.ash4d.com':
+        - libvirt
