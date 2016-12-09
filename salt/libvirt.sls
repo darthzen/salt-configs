@@ -12,8 +12,8 @@ libvirt:
     - name: libvirtd
     - require:
       - pkg: libvirt
-      - network: br0
-      - libvirt: libvirt
+#      - network: br0
+#      - libvirt: libvirt
     - watch:
       - file: libvirt
 
