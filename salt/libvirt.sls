@@ -23,5 +23,5 @@ libvirt-python:
 libguestfs:
   pkg.installed:
     - pkgs:
-      - libguestfs
-      - libguestfs-tools
+      - libguestfs0
+      - guestfs-tools
