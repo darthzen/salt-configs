@@ -14,7 +14,7 @@ base:
     'cloud7-crowbar':
         - repos.sles12-sp2-x86_64
         - repos.cloud7
-        - sle-mod-adv-sys-mgmt
+        - repos.sle-mod-adv-sys-mgmt
         - cloud7-crowbar
 
     'pikachu.ash4d.com':
