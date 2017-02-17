@@ -1,7 +1,7 @@
 base:
     '*':
         - base.vim
-        - keys
+#        - keys
 
     'pine':
         - wordpress
