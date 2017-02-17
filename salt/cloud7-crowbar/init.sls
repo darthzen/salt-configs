@@ -61,6 +61,16 @@ nfs-client:
         - mode: 644
         - makedirs: True
 
+/etc/salt:
+    file.recurse:
+        - source: salt://cloud7-crowbar/salt
+        - include_empty: True
+        - user: root
+        - group: root
+        - dir_mode: 644
+        - file_mode: 644
+        - makedirs: True
+
 /etc/ssh:
     file.recurse:
         - source: salt://cloud7-crowbar/ssh
