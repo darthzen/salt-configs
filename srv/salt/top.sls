@@ -18,5 +18,6 @@ base:
         - repos.sle-mod-adv-sys-mgmt
         - cloud7-crowbar
 
-    'pikachu.ash4d.com':
-        - libvirt
+    'pikachu':
+        - libvirt_keys:
+            - virt.keys
