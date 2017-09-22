@@ -7,15 +7,15 @@ base:
         - wordpress
 
     'cloud6-crowbar*':
-        - repos.sles12-sp1-x86_64
-        - repos.cloud6
-        - sle-mod-adv-sys-mgmt
+        - repos.SUSE.SLE-SERVER.12-SP1.x86_64
+        - repos.SUSE.OpenStack-Cloud.6.x86_64
+        - repos.SUSE.SLE-Module-Adv-Systems-Management.12.x86_64
         - cloud6-crowbar
 
     'cloud7-crowbar*':
-        - repos.sles12-sp2-x86_64
-        - repos.cloud7
-        - repos.sle-mod-adv-sys-mgmt
+        - repos.SUSE.SLE-SERVER.12-SP2.x86_64
+        - repos.SUSE.OpenStack-Cloud.7.x86_64
+        - repos.SUSE.SLE-Module-Adv-Systems-Management.12.x86_64
         - cloud7-crowbar
 
     'pikachu':

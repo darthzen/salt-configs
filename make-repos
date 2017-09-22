@@ -1,0 +1,28 @@
+#!/bin/bash
+BASEDIR="/suse/smt/SUSE/Products"
+BASEDIRESC=`echo ${BASEDIR} | sed -E "s/[\/]/\\\//g"`
+CURRDIRSBASE="srv/salt/repos/SUSE"
+
+rm -Rf ${CURRDIRSBASE}
+
+for PRODUCT in `ls ${BASEDIR} | sed "s/\/suse\/smt\/SUSE\/Products\///g"` ; do
+    echo ${PRODUCT}
+    for DIRS in  `find ${BASEDIR}/${PRODUCT} -mindepth 1 -maxdepth 1 -type d | sed "s/${BASEDIR//\//\\\/}\///g"` ; do 
+        for DIR in $DIRS ; do 
+            ARCHS=`ls ${BASEDIR}/${DIR}`
+            for ARCH in $ARCHS ; do
+                mkdir -p ${CURRDIRSBASE}/${DIR}
+                cat >> ${CURRDIRSBASE}/${DIR}/${ARCH}.sls <<EOF
+${DIR}-${ARCH}:
+    pkgrepo.managed:
+        - name: ${DIR}-${ARCH}
+        - baseurl: http://192.168.124.1/repo/SUSE/Products/${DIR}/${ARCH}/product
+${DIR}-${ARCH}-Updates:
+    pkgrepo.managed:
+        - name: ${DIR}-${ARCH}-Updates
+        - baseurl: http://192.168.124.1/repo/SUSE/Updates/${DIR}/${ARCH}/update
+EOF
+            done
+        done
+    done
+done
